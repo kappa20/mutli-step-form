@@ -28,7 +28,7 @@ export default function App() {
             </main>
 
             <div id='btnsContainer'>
-                <button onClick={()=> {if(stepIndex === 0){return}setStepIndex((stepIndex - 1) % 4)}} id='goBackBtn'>Go Back</button>
+               {stepIndex !== 0 &&<button onClick={()=> {if(stepIndex === 0){return}setStepIndex((stepIndex - 1) % 4)}} id='goBackBtn'>Go Back</button>} 
                 <button onClick={()=> {if(stepIndex === 3){return}setStepIndex((stepIndex + 1) % 4)}} id='nextBtn'>Next step</button>
             </div>
         </section>
