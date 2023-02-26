@@ -8,8 +8,8 @@ export default function Forms({index}){
     let forms = [<Info />,<Plan />,<AddOns />,<Summary />];
     
     return (
-        <>
+        <div id='formsContainer'>
         {forms[index]}
-        </>
+        </div>
     );
 }
