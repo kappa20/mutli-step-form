@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
-}
+@font-face {
+  font-family: "ubunto";
+  src: url("../public/assets/fonts/Ubuntu-Bold.ttf"),
+  url("../public/assets/fonts/Ubuntu-Medium.ttf"),
+  url("../public/assets/fonts/Ubuntu-Regular.ttf");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
   }
+
+*{
+  font-family: 'ubunto';
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+.app{
+  width: 100vw;
+  height: 100vh;
+  background-color: #eef5ff;
+  display: grid;
+  place-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.formContainer{
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+ 
+}
+
+aside{
+  border:1px solid rgb(224, 42, 42);
+  border-radius: 0.5rem;
+  width: max-content;
+  position:relative
+}
+ #stepsContainer{
+  width: 100%;
+  padding-left: 1.8rem;
+  padding-top: 2rem;
+  position:absolute;
+  top:0;
+  left:0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  gap:2rem
+}
+
+.step{
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap:1rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1px;
+}
+.stepNum{
+  height:2.1rem;
+  width:2.1rem;
+  border-radius: 50%;
+  color:white;
+  display: grid;
+  border:1.5px solid #ffffff;
+  background-color: transparent;
+  
+  place-items:center ;
 }
 
-.App-link {
-  color: #61dafb;
+.stepNum:hover{
+  background-color: #bee2fc;
+  color:black;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.stepInfo > span{
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: small;
+  color:#ffffff96
 }
+.stepInfo > p{
+  font-size: 16px;
+  color:#ffffff;
+  text-transform: uppercase;
+ 
+}
+
+
+

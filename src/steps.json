@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "sideTitle":"your info",
+        "title":"Personal info",
+        "description":"Please provide your name, email address and phone number ."
+    },
+    {
+        "id":2,
+        "sideTitle":"select plan",
+        "title":"Select your plan",
+        "description":"You have the option of monthly or yearly billing."
+    },
+    {
+        "id":3,
+        "sideTitle":"add-ons",
+        "title":"Pick add-ons",
+        "description":"Add-ons help enhave your gaming experience . "
+    },
+    {
+        "id":4,
+        "sideTitle":"summary",
+        "title":"Finishing up",
+        "description":"Double-check everything looks OK before confirming."
+    }
+]
