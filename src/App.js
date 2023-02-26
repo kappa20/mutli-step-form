@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import data from "./steps.json";
 import SideBar from "./Components/Sidebar.js";
+import Forms from "./Components/Forms.js";
 
 export default function App() {
   const [stepIndex,setStepIndex] = useState(0);
@@ -23,7 +24,7 @@ export default function App() {
             </div>
 
             <main>
-              
+              <Forms index={stepIndex}/>
             </main>
 
             <div id='btnsContainer'>
