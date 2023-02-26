@@ -1,0 +1,23 @@
+[
+    {
+        "iconPath":"/assets/images/icon-arcade.svg",
+        "title":"Arcade",
+        "monthPlan":9,
+        "yearPlan":90,
+        "yearOffer":"2 months free"
+    },
+    {
+        "iconPath":"/assets/images/icon-advanced.svg",
+        "title":"Advanced",
+        "monthPlan":12,
+        "yearPlan":120,
+        "yearOffer":"2 months free"
+    },
+    {
+        "iconPath":"/assets/images/icon-pro.svg",
+        "title":"Pro",
+        "monthPlan":15,
+        "yearPlan":150,
+        "yearOffer":"2 months free"
+    }
+]

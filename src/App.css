@@ -5,7 +5,9 @@
   url("../public/assets/fonts/Ubuntu-Regular.ttf");
 
   }
-
+button{
+  all:unset;
+}
 *{
   font-family: 'ubunto';
   padding:0;
@@ -15,7 +17,7 @@
 .app{
   width: 100vw;
   height: 100vh;
-  background-color: #eef5ff;
+  background-color: hsl(217, 100%, 97%);
   display: grid;
   place-items: center;
 }
@@ -162,6 +164,8 @@ main{
 
 #formsContainer{
   padding: 0 3rem 0 0;
+  display: grid;
+  gap:2rem;
 }
 
 #infoForm{
@@ -212,5 +216,88 @@ input:invalid{
 /* input:invalid{
   border-color: hsl(354, 84%, 57%);
 } */
+#offers{
+  display: grid;
+  gap:2.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.offerContainer{
+  border-radius: 0.3rem;
+  border:1px solid hsl(231, 11%, 63%);
+  padding: 1.5rem 1rem;
+  display: grid;
+  gap:2rem
+}
+.activeOffer{
 
+  border:1px solid hsl(243, 100%, 62%);
+  background-color: hsl(206, 94%, 87%);
+}
+.offerContainer > div{
+  display: grid;
+  gap:0.4rem;
+}
+.offerContainer > div > label{
+  font-size: 14px;
+  font-weight: 400;
+  color:hsl(213, 96%, 18%);
+}
+
+.offerTitle{
+  color:hsl(213, 96%, 18%);
+}
+
+.offerPlan{
+  color:hsl(231, 11%, 63%);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+#planSwitcher{
+  padding: 0.8rem;
+  background-color: hsl(217, 100%, 97%);
+  display: grid;
+  place-items: center;
+  
+}
+#planSwitcher > div{
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  gap: 0.5rem;
+}
+
+#switch{
+  border:1px solid black;
+  height: max-content;
+  padding:0.15rem;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 0.6rem;
+  width: 30px;
+  overflow: auto;
+  
+}
+#switch-dot{
+  background-color: white;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  transition: transform 300ms ease;
+  
+}
+
+.isActive{
+  color:hsl(213, 96%, 18%);
+}
+
+.isNotActive{
+  color:hsl(231, 11%, 63%);
+}
+
+.hide{
+opacity: 0;
+}
+
+.flotRight{
+  transform: translateX(140%);
+}
 
