@@ -1,6 +1,6 @@
-export default function Step({step}){
+export default function Step({step,isActive}){
     return (
-        <li className="step">
+        <li className={isActive ? 'step active' : 'step'}>
         <div className="stepNum"> {step.id} </div>
         <div className="stepInfo">
           <span>step {step.id}</span>

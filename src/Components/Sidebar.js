@@ -1,9 +1,10 @@
 
 import Step from "./Step.js";
 
-export default function SideBar({steps}) {
-  const items = steps.map((step) => {
-    return <Step step={step} />;
+export default function SideBar({steps,stepIndex}) {
+  const items = steps.map((step,index) => {
+    let isActive = index === stepIndex;
+    return <Step step={step} isActive={isActive} />;
   });
   return (
     <aside>
