@@ -1,5 +1,5 @@
 import { useState } from "react";
-export default function Info() {
+export default function Info({ infoFormRef ,handleStep}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -11,10 +11,10 @@ export default function Info() {
   const isInvalid = (inputName) =>
     errors.includes(inputName) ? "errorInput" : "";
 
-  const checkForm = () =>
-    errors.length === 0 ? console.log(errors.length) : console.log("You have errors");
-    checkForm()
-  function handleSubmit() {
+  
+
+  function handleSubmit(event) {
+    event.preventDefault();
     const nameReg = new RegExp(/[\w\s]+/);
     const emailReg = new RegExp(/[\w\s]+@[\w]+\.[\w]+/);
     const PhoneReg = new RegExp(/\+[\d]+/);
@@ -23,19 +23,20 @@ export default function Info() {
     !nameReg.test(name) && err.push("name");
     !emailReg.test(email) && err.push("email");
     !PhoneReg.test(phone) && err.push("phone");
-    // if(err.length === 0){
-    //     console.log("go Next form")
-    // }else{
-    //     console.log("You have errors")
-    // }
+    if(err.length === 0){
+        handleStep(1);
+    }
     setErrors(err);
-   
   }
 
   return (
     <>
-      <div id="infoForm">
-        {errors}
+      <form
+        id="infoForm"
+        onSubmit={(event) => {
+          handleSubmit(event)
+        }}
+      >
         <div className="inputContainer">
           <label htmlFor="name">Name</label>
           <input
@@ -76,8 +77,10 @@ export default function Info() {
           />
           <label className="errorLabel">This field is required </label>
         </div>
-        <button onClick={handleSubmit}>submit Info</button>
-      </div>
+        <button ref={infoFormRef} type="submit">
+          submit Info
+        </button>
+      </form>
     </>
   );
 }

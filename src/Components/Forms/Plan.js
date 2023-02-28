@@ -15,7 +15,7 @@ export default function Plan() {
     if(selectedPlan != null && plan.title === selectedPlan.title){
         selected = true;
     }
-    return <Offer isSelected={selected}  selectPlanHandle={handleSelectPlan}  
+    return <Offer key={plan.title} isSelected={selected}  selectPlanHandle={handleSelectPlan}  
     plan={plan} isMonth={isMonth} />;
   });
 
@@ -24,11 +24,11 @@ export default function Plan() {
       <div id="offers">{offers}</div>
       <div id="planSwitcher">
         <div>
-          <button  className={`${isMonth ? 'isActive':'isNotActive'}`} 
+          <button  className={isMonth ? 'isActive':'isNotActive'} 
           onClick={() => setIsMonth(true)}>Monthly</button>
           <button onClick={() => setIsMonth(!isMonth)}>
             <div id='switch'>
-                <div id='switch-dot' className={!isMonth && 'flotRight'}>
+                <div id='switch-dot' className={!isMonth ? 'flotRight':''}>
 
                 </div>
             </div>
