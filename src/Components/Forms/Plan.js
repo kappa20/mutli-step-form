@@ -5,9 +5,11 @@ import { useState } from "react";
 export default function Plan() {
   const [isMonth, setIsMonth] = useState(true);
   const [selectedPlan,setSelectedPlan] = useState(null);
+
   function handleSelectPlan(pla){
         setSelectedPlan(pla)
   }
+  
   let offers = plans.map((plan) => {
     let selected = false;
     if(selectedPlan != null && plan.title === selectedPlan.title){
@@ -16,6 +18,7 @@ export default function Plan() {
     return <Offer isSelected={selected}  selectPlanHandle={handleSelectPlan}  
     plan={plan} isMonth={isMonth} />;
   });
+
   return (
     <>
       <div id="offers">{offers}</div>

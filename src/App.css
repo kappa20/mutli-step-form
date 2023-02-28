@@ -199,20 +199,29 @@ input {
 input:focus{
   border-color: hsl(243, 100%, 62%);
 }
-input:valid  + label.errorLabel{
+/* input:valid  + label.errorLabel{
   opacity: 0;
 }
 input:invalid{
   border-color: hsl(354, 84%, 57%);
-}
+} */
 
 .errorLabel{
   grid-column: 2/3;
   grid-row: 1/1;
   justify-self: end;
+  /* color: hsl(354, 84%, 57%); */
+  color:transparent;
+}
+.errorColor{
   color: hsl(354, 84%, 57%);
 }
-
+.errorInput{
+  border-color: hsl(354, 84%, 57%);
+}
+.errorInput + label{
+  color: hsl(354, 84%, 57%);
+}
 /* input:invalid{
   border-color: hsl(354, 84%, 57%);
 } */

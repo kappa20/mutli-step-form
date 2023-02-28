@@ -5,7 +5,7 @@ import SideBar from "./Components/Sidebar.js";
 import Forms from "./Components/Forms.js";
 
 export default function App() {
-  const [stepIndex,setStepIndex] = useState(1);
+  const [stepIndex,setStepIndex] = useState(0);
   
   return (
     <div className="app">
