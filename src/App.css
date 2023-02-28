@@ -79,7 +79,9 @@ aside{
   place-items:center ;
 }
 
-
+.hideNone{
+  display:none;
+}
 
 
 .stepInfo > span{

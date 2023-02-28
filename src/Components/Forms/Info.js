@@ -77,7 +77,7 @@ export default function Info({ infoFormRef ,handleStep}) {
           />
           <label className="errorLabel">This field is required </label>
         </div>
-        <button ref={infoFormRef} type="submit">
+        <button ref={infoFormRef} className="hideNone" type="submit">
           submit Info
         </button>
       </form>
