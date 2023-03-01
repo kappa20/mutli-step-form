@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { updateInfo } from "../../features/userSlice";
+
+
 export default function Info({ infoFormRef ,handleStep}) {
+  const userInfo = useSelector((state) => state.userInfo.value);
+  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [errors, setErrors] = useState([]);
-
+  
+  // Redux State
+  useEffect(()=>{
+    setName(userInfo.name);
+    setEmail(userInfo.email);
+    setPhone(userInfo.phone);
+  },[userInfo])
   const removeError = (inputName) =>
     setErrors(errors.filter((el) => el !== inputName));
 
@@ -14,6 +26,7 @@ export default function Info({ infoFormRef ,handleStep}) {
   
 
   function handleSubmit(event) {
+    console.log(userInfo);
     event.preventDefault();
     const nameReg = new RegExp(/[\w\s]+/);
     const emailReg = new RegExp(/[\w\s]+@[\w]+\.[\w]+/);
@@ -24,6 +37,8 @@ export default function Info({ infoFormRef ,handleStep}) {
     !emailReg.test(email) && err.push("email");
     !PhoneReg.test(phone) && err.push("phone");
     if(err.length === 0){
+      dispatch(updateInfo({name:name,email:email,phone:phone}))
+        
         handleStep(1);
     }
     setErrors(err);
