@@ -188,7 +188,7 @@ label {
   font-size: smaller;
   font-family: Arial, Helvetica, sans-serif;
 }
-input {
+input[type='text'],input[type='email'] {
   all:unset;
   grid-column: span 2 / span 2;
   padding:0.8rem;
@@ -311,4 +311,119 @@ opacity: 0;
 .flotRight{
   transform: translateX(140%);
 }
+.AddOnsContainer{
+  display: grid;
+  gap:1rem
+}
+.selectedAdd{
+  background-color: hsla(243, 84%, 64%, 0.095);
+  border:1px solid hsl(243, 100%, 62%);
+}
+.addOnContainer{
+ 
+  border:1px solid hsl(231, 11%, 63%);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  display:grid;
+  grid-template-columns: max-content 1fr max-content;
+  justify-content: space-between;
+  gap:2rem;
+  align-items: center;
+}
 
+.addCheckbox{
+
+}
+input[type="checkbox"]:checked {
+
+}
+
+.addOnContainer > div{
+  display: grid; 
+  gap:0.5rem;
+}
+.addOnContainer > div > span{
+  font-size: 16px;
+  font-weight: 700;
+  color:hsla(213, 96%, 18%, 0.924);
+}
+.addOnContainer > div > p{
+  font-size: 16px;
+  font-weight: 400;
+  color:hsla(231, 11%, 63%, 0.438);
+}
+.addOnContainer >span{
+  font-size: 12px;
+  font-weight: 700;
+  color:hsl(243, 100%, 62%);
+}
+
+.main {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Hide the default checkbox */
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+/* Creating a custom checkbox
+based on demand */
+.geekmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(255, 255, 255);
+  border:1px solid hsl(231, 11%, 63%);
+  border-radius: 0.4rem;
+}
+
+/* Specify the background color to be
+shown when hovering over checkbox */
+
+
+/* Specify the background color to be
+shown when checkbox is active */
+.main input:active ~ .geekmark {
+  background-color: hsl(243, 100%, 62%);
+}
+
+/* Specify the background color to be
+shown when checkbox is checked */
+.main input:checked ~ .geekmark {
+  background-color: hsl(243, 100%, 62%);
+}
+
+/* Checkmark to be shown in checkbox */
+/* It is not be shown when not checked */
+.geekmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Display checkmark when checked */
+.main input:checked ~ .geekmark:after {
+  display: block;
+}
+
+/* Styling the checkmark using webkit */
+/* Rotated the rectangle by 45 degree and 
+showing only two border to make it look
+like a tickmark */
+.main .geekmark:after {
+  left: 8px;
+  bottom: 5px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

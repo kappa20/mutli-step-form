@@ -6,7 +6,7 @@ const initialState = {
         email:"",
         phone:"",
         plan:'',
-        planType:''
+        planType:'month'
     }
 }
 

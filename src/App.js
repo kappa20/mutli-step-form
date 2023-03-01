@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 export default function App() {
   const userInfo = useSelector((state) => state.userInfo.value)
-  const [stepIndex,setStepIndex] = useState(0);
+  const [stepIndex,setStepIndex] = useState(2);
 
   const infoFormRef = useRef(null);
 

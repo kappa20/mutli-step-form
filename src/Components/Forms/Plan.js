@@ -6,7 +6,7 @@ import { updateInfo } from "../../features/userSlice";
 export default function Plan() {
   const userInfo = useSelector((state) => state.userInfo.value);
   const dispatch = useDispatch();
-  const [isMonth, setIsMonth] = useState(true);
+  const [isMonth, setIsMonth] = useState(null);
   const [selectedPlan,setSelectedPlan] = useState(null);
 
   function handleSelectPlan(pla){
@@ -15,18 +15,20 @@ export default function Plan() {
           plan:pla,
           planType:isMonth ? 'month':'year'}))
   }
+
   useEffect(()=>{
     setSelectedPlan(userInfo.plan);
-    if(userInfo.planType === '')return;
-    else if(userInfo.planType === 'month') setIsMonth(true);
-    else setIsMonth(false);
+    if(userInfo.planType === 'month') setIsMonth(true);
+    else if(userInfo.planType === 'year') setIsMonth(false);
 
-  },[userInfo]);
+  },[]);
+
   useEffect(()=>{
     console.log(userInfo)
     dispatch(updateInfo({
       planType:isMonth ? 'month':'year'}))
   },[isMonth,dispatch,userInfo])
+
   let offers = plans.map((plan) => {
     let selected = false;
     if(selectedPlan != null && plan.title === selectedPlan.title){
