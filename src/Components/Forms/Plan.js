@@ -21,7 +21,7 @@ export default function Plan() {
     else if(userInfo.planType === 'month') setIsMonth(true);
     else setIsMonth(false);
 
-  },[]);
+  },[userInfo]);
   useEffect(()=>{
     console.log(userInfo)
     dispatch(updateInfo({
