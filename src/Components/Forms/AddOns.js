@@ -7,7 +7,9 @@ import { useEffect, useState } from "react";
 export default function AddOns(){
     const userInfo = useSelector((state) => state.userInfo.value)
     const [isMonth,setIsmonth] = useState(false);
+    const [titles,setTitles] = useState([]);
     useEffect(()=>{
+        console.log(titles)
         if(userInfo.planType === 'month'){
             setIsmonth(true)
         }else if(userInfo.planType === 'year'){
@@ -15,12 +17,14 @@ export default function AddOns(){
 
         }
     
-    },[userInfo])
+    },[userInfo,titles])
     const Adds = addOns.map((ad)=>{
-        return <Add data={ad} key={ad.title} isMonth={isMonth}/>
+       
+
+        return <Add titles={titles} setTitles={setTitles} title data={ad} key={ad.title} isMonth={isMonth}/>
     })
     return (
-        <div class="AddOnsContainer">
+        <div className="AddOnsContainer">
         {Adds}
         </div>
     );

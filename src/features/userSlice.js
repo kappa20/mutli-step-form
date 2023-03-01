@@ -6,7 +6,9 @@ const initialState = {
         email:"",
         phone:"",
         plan:'',
-        planType:'month'
+        planType:'month',
+        addOnsTitles:[]
+
     }
 }
 
@@ -15,11 +17,31 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
       updateInfo: (state, action) => {
+
         state.value =Object.assign(state.value,action.payload);
       },
+      addAddOnsTitle:(state,action)=>{
+        let newTitle = action.payload;
+        let newSet = new Set(state.value.addOnsTitles);
+    
+        newSet.add(newTitle);
+        
+
+        state.value.addOnsTitles = Array.from(newSet);
+        
+      }, 
+      
+      removeAddOnsTitle:(state,action)=>{
+        let newTitle = action.payload;
+        let newSet = new Set(state.value.addOnsTitles);
+        newSet.delete(newTitle);
+        state.value.addOnsTitles = Array.from(newSet);
+
+      }
+    
     },
   })
 
-  export const {updateInfo}  = userSlice.actions;
+  export const {updateInfo,addAddOnsTitle,removeAddOnsTitle}  = userSlice.actions;
 
   export default userSlice.reducer;
