@@ -2,14 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     value:{
-        name:'',
-        email:'',
-        phone:'',
-        plan:{
-            title:'',
-            type:'',
-            price:''
-        },
+        name:"",
+        email:"",
+        phone:"",
+        plan:'',
+        planType:''
     }
 }
 
@@ -18,7 +15,7 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
       updateInfo: (state, action) => {
-        state.value = action.payload
+        state.value =Object.assign(state.value,action.payload);
       },
     },
   })

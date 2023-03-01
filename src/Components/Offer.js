@@ -1,7 +1,17 @@
+
 export default function Offer({plan,isMonth,selectPlanHandle,isSelected}){
+    function handleSelection(pla){
+        if(isSelected === true){
+
+            selectPlanHandle('')
+        }else{
+            selectPlanHandle(pla)
+        }
+    }
+
     
     return (
-        <div onClick={()=>selectPlanHandle(plan)} className={`offerContainer ${isSelected && 'activeOffer'}`}>
+        <div onClick={()=>handleSelection(plan)} className={`offerContainer ${isSelected && 'activeOffer'}`}>
             <img src={plan.iconPath} alt={plan.title}/>
             <div>
                 <p className='offerTitle'>{plan.title}</p>
