@@ -3,10 +3,10 @@ import Plan from "./Forms/Plan";
 import AddOns from "./Forms/AddOns";
 import Summary from "./Forms/Summary";
 
-export default function Forms({index,infoFormRef,handleStep}){
+export default function Forms({index,infoFormRef,addOnsFormRef,handleStep}){
     
     let forms = [<Info infoFormRef={infoFormRef} handleStep={handleStep}/>,
-    <Plan />,<AddOns />,<Summary />];
+    <Plan />,<AddOns addOnsFormRef={addOnsFormRef} handleStep={handleStep}  />,<Summary />];
     
     return (
         <div id='formsContainer'>

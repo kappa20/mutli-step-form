@@ -11,20 +11,21 @@ export default function App() {
   const [stepIndex,setStepIndex] = useState(2);
 
   const infoFormRef = useRef(null);
+  const addOnsFormRef = useRef(null);
 
   const goNext = ()=>{
    
     if(stepIndex === 0 ){
-      console.log(infoFormRef.current.click());
+     infoFormRef.current.click();
     }
     else if(stepIndex === 1){
       (userInfo.plan === '') ? alert('Choose A plan') :setStepIndex(2);
      
     }
-    else if(stepIndex === 3){
-      return 
+    else if(stepIndex === 2){
+      addOnsFormRef.current.click();
     }
-    
+
   }
   return (
     <div className="app">
@@ -35,7 +36,10 @@ export default function App() {
         <section >
             <Header data={data[stepIndex]}/>
             <main>
-              <Forms  handleStep={setStepIndex}  infoFormRef={infoFormRef} index={stepIndex}/>
+              <Forms  handleStep={setStepIndex}   
+              infoFormRef={infoFormRef} 
+              addOnsFormRef={addOnsFormRef}
+              index={stepIndex}/>
             </main>
 
             <div id='btnsContainer'>

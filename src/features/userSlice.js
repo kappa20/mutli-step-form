@@ -20,28 +20,16 @@ export const userSlice = createSlice({
 
         state.value =Object.assign(state.value,action.payload);
       },
-      addAddOnsTitle:(state,action)=>{
-        let newTitle = action.payload;
-        let newSet = new Set(state.value.addOnsTitles);
-    
-        newSet.add(newTitle);
-        
-
-        state.value.addOnsTitles = Array.from(newSet);
-        
-      }, 
-      
-      removeAddOnsTitle:(state,action)=>{
-        let newTitle = action.payload;
-        let newSet = new Set(state.value.addOnsTitles);
-        newSet.delete(newTitle);
-        state.value.addOnsTitles = Array.from(newSet);
-
+      addAddOnsTitles:(state,action)=>{
+  
+        let titles = action.payload
+        state.value.addOnsTitles = titles
+  
       }
     
     },
   })
 
-  export const {updateInfo,addAddOnsTitle,removeAddOnsTitle}  = userSlice.actions;
+  export const {updateInfo,addAddOnsTitles}  = userSlice.actions;
 
   export default userSlice.reducer;

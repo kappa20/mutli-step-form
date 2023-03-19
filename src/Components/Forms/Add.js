@@ -19,7 +19,7 @@ export default function Add({ data, isMonth,isSelected ,titles,setTitles}) {
     <>
       <label  className={new Set(titles).has(data.title) ? 'addOnContainer selectedAdd':'addOnContainer'}>
         <label className="main">
-          <input type="checkbox" onChange={handleSelect}  id='data.title'/>
+          <input type="checkbox" checked={new Set(titles).has(data.title)} onChange={handleSelect}  id='data.title'/>
           <span className="geekmark"></span>
         </label>
 
